@@ -24,7 +24,7 @@ VALIDATE $? "Removing the default content and extracting the application code"
 cp /home/ec2-user/roboshop-shell/configurations/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$LOG_FILE
 VALIDATE $? "changing the directory" 
 
-systemctl restart ngnix &>>$LOG_FILE
+systemctl restart nginx &>>$LOG_FILE
 VALIDATE $? "Restarted the service"
 
 
