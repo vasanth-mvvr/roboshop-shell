@@ -27,5 +27,9 @@ cp /home/ec2-user/roboshop-shell/configurations/roboshop.conf /etc/nginx/default
 systemctl restart nginx &>>$LOG_FILE
 # VALIDATE $? "Restarted the service"
 
+# To uninstall and removing all config files
+# sudo dnf remove nginx* -y
+# sudo rm -rf /etc/nginx /usr/share/nginx /var/log/nginx
+
 
 
