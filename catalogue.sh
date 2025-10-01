@@ -13,8 +13,8 @@ dnf module enable nodejs:20 -y &>>$LOG_FILE
 
 dnf install nodejs -y &>>$LOG_FILE
 
-id=roboshop &>>$LOG_FILE
-if [ $id -ne 0 ]
+id roboshop &>>$LOG_FILE
+if [ $? -ne 0 ]
 then 
     useradd roboshop &>>$LOG_FILE
 else
