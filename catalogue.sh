@@ -18,7 +18,7 @@ if [ $id -ne 0 ]
 then 
     useradd roboshop &>>$LOG_FILE
 else
-    echo -e "The $id is present $Y Skipping $N"
+    echo -e "The user is present $Y Skipping $N"
 fi 
 
 mkdir -p /app &>>$LOG_FILE   # -p --> present
@@ -45,5 +45,5 @@ dnf install mongodb-mongosh -y &>>$LOG_FILE
 
 mongosh --host mongo.vasanthreddy.space </app/schema/catalogue.js &>>$LOG_FILE
 
-systemctl restart catalogue
+systemctl restart catalogue &>>$LOG_FILE
 
