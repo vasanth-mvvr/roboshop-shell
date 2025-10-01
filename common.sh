@@ -30,12 +30,12 @@ VALIDATE(){
 }
 
 check_root(){
-    if [ $USERID -ne 0 ] {
+    if [ $USERID -ne 0 ] 
     then
         echo -e " $R You need to have super user access $N"
         exit 1
     else
         echo -e "$G You are super user $N"
     fi    
-    }
+    
 }
