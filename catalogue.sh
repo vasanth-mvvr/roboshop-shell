@@ -13,12 +13,11 @@ dnf module enable nodejs:20 -y &>>$LOG_FILE
 
 dnf install nodejs -y &>>$LOG_FILE
 
-id roboshop &>>$LOG_FILE
-if [ $? -ne 0 ]
-then 
-    useradd roboshop &>>$LOG_FILE
-else
+if id roboshop &>>$LOG_FILE; 
+then
     echo -e "The user is present $Y Skipping $N"
+else
+    useradd roboshop &>>$LOG_FILE
 fi 
 
 mkdir -p /app &>>$LOG_FILE   # -p --> present
