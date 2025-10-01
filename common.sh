@@ -37,5 +37,4 @@ check_root(){
     else
         echo -e "$G You are super user $N"
     fi    
-    
 }
