@@ -3,7 +3,7 @@
 source ./common.sh
 check_root
 
-cp /root/roboshop-shell/configurations/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOG_FILE
+cp /home/ec2-user/roboshop-shell/configurations/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOG_FILE
 
 dnf install mongodb-org -y &>>$LOG_FILE
 
