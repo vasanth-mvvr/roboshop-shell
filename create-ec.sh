@@ -1,7 +1,8 @@
 #!/bin/bash
 
-instances=("mongodb" "redis" "catalouge" "cart" "user" "web" "shipping" "mysql" "rabbitmq" "payment")
-hosted_zone_id=""
+#instances=("mongodb" "redis" "catalouge" "cart" "user" "web" "shipping" "mysql" "rabbitmq" "payment")
+instances=("shipping" "web")
+hosted_zone_id="Z02340692WDUGXG2FUTDA"
 domain_name="vasanthreddy.space"
 
 for name in {$instances[@]};
