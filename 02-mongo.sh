@@ -13,4 +13,6 @@ systemctl start mongod &>>$LOG_FILE
 
 # Need to change the localhost application ip to another server 127.0.0.1 t0 0.0.0.0
 # vim /etc/mongod.conf
-# Restart --> systemctl restart mongod
+sed -i '/s/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG_FILE
+
+systemctl restart mongod &>>$LOG_FILE
