@@ -5,7 +5,7 @@ instances=("shipping" "web")
 hosted_zone_id="Z02340692WDUGXG2FUTDA"
 domain_name="vasanthreddy.space"
 
-for name in {$instances[@]};
+for name in ${instances[@]};
 do 
     if [ $name == "shipping" ] || [ $name=="mysql" ]
     then 
