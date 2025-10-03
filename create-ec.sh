@@ -7,7 +7,7 @@ domain_name="vasanthreddy.space"
 
 for name in ${instances[@]};
 do 
-    if [ $name == "shipping" ] || [ $name=="mysql" ]
+    if [ "$name" == "shipping" ] || [ "$name" == "mysql" ]
     then 
         instance_type="t3.medium"
     else
@@ -15,9 +15,11 @@ do
     fi
     echo "The instances are : $name and the instance type is : $instance_type"   
     instance_id=$(aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type $instance_type  --security-group-ids sg-0aaab2bdfa4e9f45a --subnet-id subnet-0d91ae6100b003216 --query 'Instances[0].InstanceId' --output text)
+    echo "The instance_id is created : $instance_id"
 
 
     aws ec2 create-tags --resources $instance_id --tags Key=Name,Value=$name
+    echo "The tags are created"
 
     if [ $name == "web" ]
     then 
