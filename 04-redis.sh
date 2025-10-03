@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./common.sh
+check_root
 
 dnf install redis -y &>>$LOG_FILE
  
